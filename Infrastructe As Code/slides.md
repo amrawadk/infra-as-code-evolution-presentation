@@ -540,10 +540,6 @@ end
       <carbon:close-filled class="text-red-500"/>
       <span>Steeper learning curve for non-developers</span>
     </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
-      <carbon:close-filled class="text-red-500"/>
-      <span>Complex Ruby-based configuration</span>
-    </div>
   </div>
 </div>
 
@@ -616,9 +612,259 @@ layout: two-cols-header
       <carbon:checkmark-filled class="text-green-500"/>
       <span>Lower barrier to entry</span>
     </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2010-2014</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-cloud-services class="text-blue-500"/> The Cloud Native Shift
+  </h2>
+</div>
+
+::left::
+<div class="mt-2 p-4">
+
+<div class="flex flex-col gap-4">
+  <div v-click class="p-4 border rounded border-gray-400">
+    <h3 class="font-bold text-gray-400">First Generation</h3>
+    <ul class="mt-2 text-sm">
+      <li>Configure individual machines</li>
+      <li>Install and manage software</li>
+      <li>Handle system dependencies</li>
+      <li>Maintain running services</li>
+    </ul>
+  </div>
+
+  <div v-click class="p-4 border rounded border-blue-400">
+    <h3 class="font-bold text-blue-400">Second Generation</h3>
+    <ul class="mt-2 text-sm">
+      <li>Declare cloud resources</li>
+      <li>Use managed services</li>
+      <li>Higher-level abstractions</li>
+      <li>Cloud provider handles operations</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4">
+
+<div class="flex flex-col gap-4">
+  <div class="p-4 border rounded border-gray-400" v-click>
+    <h3 class="font-bold flex items-center gap-2 text-gray-400">
+      <carbon-cloud-app class="text-blue-500"/> Key Changes
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>SNS instead of ZeroMQ</li>
+      <li>RDS instead of PostgreSQL setup</li>
+      <li>S3 instead of file systems</li>
+      <li>Lambda instead of process management</li>
+    </ul>
+  </div>
+
+  <div class="p-4 border rounded border-gray-400" v-click>
+    <h3 class="font-bold flex items-center gap-2 text-gray-400">
+      <carbon-development class="text-green-500"/> Resource-Oriented
+    </h3>
+    <div class="text-sm mt-2">
+      <p>Infrastructure defined as a collection of managed resources rather than configuration steps</p>
+    </div>
+  </div>
+
+  <div class="text-sm text-gray-400 mt-2" v-click>
+    The focus shifted from "how to run services" to "which services do we need?" ...
+  </div>
+</div>
+
+</div>
+
+// ... existing code ...
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2011</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 mt-2">
+    <logos-aws/> CloudFormation
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```yaml
+Resources:
+  WebServerInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c55b159cbfafe1f0
+      InstanceType: t2.micro
+      SecurityGroups:
+        - !Ref WebServerSecurityGroup
+      UserData: 
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          yum install -y httpd
+
+  WebServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable HTTP access
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-cloud class="text-orange-500"/>
+    <span>Native AWS Integration</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-template class="text-blue-500"/>
+    <span>JSON/YAML Templates</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-flow class="text-green-500"/>
+    <span>Built-in State Management</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Deep AWS Integration</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Automatic Rollbacks</span>
+    </div>
     <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
       <carbon:close-filled class="text-red-500"/>
-      <span>Performance at scale (SSH overhead)</span>
+      <span>AWS-only</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Complex Template Syntax</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2014</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 mt-2">
+    <logos-terraform-icon class="text-purple-500"/> Terraform
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```hcl
+provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_instance" "web" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "WebServer"
+  }
+}
+
+resource "aws_security_group" "allow_http" {
+  name        = "allow_http"
+  description = "Allow HTTP inbound traffic"
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-cloud-satellite class="text-purple-500"/>
+    <span>Multi-Cloud Support</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-code class="text-blue-500"/>
+    <span>HCL Configuration Language</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <vscode-icons-file-type-graphql class="text-green-500"/>
+    <span>Resource Graph & Planning</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Provider-agnostic</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Clear State Management</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Rich Provider Ecosystem</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>State File Management</span>
     </div>
   </div>
 </div>
