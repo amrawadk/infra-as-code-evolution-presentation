@@ -1721,3 +1721,79 @@ layout: center
   - <carbon-code-reference class="text-purple-400 inline mb-1"/> Infrastructure derived from intent
 
 </v-clicks>
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-decision-tree class="text-blue-500"/> When to Choose What?
+  </h2>
+  <span class="text-gray-400 text-sm tracking-wide">Lessons learned the hard way</span>
+</div>
+
+::left::
+
+<div class="mt-2 p-4">
+
+<div class="flex flex-col gap-4">
+  <div v-click class="p-4 border rounded border-green-400">
+    <h3 class="font-bold flex items-center gap-2 text-green-400">
+      <carbon-group class="text-green-500"/> Small Teams
+    </h3>
+    <div class="mt-2">
+      <div class="flex items-center gap-2 mb-2" v-click>
+        <material-symbols-light:shield-question-rounded/>
+        <span class="font-semibold">Is infrastructure a core differentiator?</span>
+      </div>
+      <div class="ml-6" v-click>
+        <div class="text-sm mb-2">If no, consider managed platforms, such as:</div>
+        <ul class="text-sm list-disc ml-4">
+          <li>Digital Ocean App Platform</li>
+          <li>Vercel</li>
+          <li>Netlify</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div v-click class="p-4 border rounded border-blue-400">
+    <h3 class="font-bold flex items-center gap-2 text-blue-400">
+      <carbon-currency class="text-blue-500"/> Growing Teams
+    </h3>
+    <div class="mt-2">
+      <div class="text-sm mb-2">When costs increase:</div>
+      <ul class="text-sm list-disc ml-4">
+        <li>Choose tools in your app's language, like CDK or Pulumi</li>
+        <li>Focus on developer productivity</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4">
+
+<div class="flex flex-col gap-4">
+  <div v-click class="p-4 border rounded border-purple-400">
+    <h3 class="font-bold flex items-center gap-2 text-purple-400">
+      <carbon-enterprise class="text-purple-500"/> Enterprise
+    </h3>
+    <div class="mt-2">
+      <div class="text-sm mb-2">Key considerations:</div>
+      <ul class="text-sm list-disc ml-4">
+        <li>Developer tooling & standards</li>
+        <li>Licensing & compliance</li>
+        <li>Team training & support</li>
+        <li>Multi-cloud strategy</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="text-sm text-gray-400" v-click>
+  Remember: The best tool is often the one that lets your team ship value fastest ...
+</div>
+</div>
+</div>
