@@ -1667,7 +1667,7 @@ app.get('/files', async (req, res) => {
 </div>
 
 ---
-layout: quote
+layout: center
 ---
 
 # Let's recap
@@ -1797,3 +1797,36 @@ layout: two-cols-header
 </div>
 </div>
 </div>
+
+
+---
+layout: center
+---
+
+# Questions? 😀
+
+---
+layout: center
+---
+
+# Resources
+
+<v-clicks>
+
+- **Historical Evolution** {.text-orange-500}
+  - <carbon-document class="text-orange-500 inline mb-1"/> ["A Brief DevOps History: The Roots of Infrastructure as Code"](https://thenewstack.io/a-brief-devops-history-the-roots-of-infrastructure-as-code/)
+  - <carbon-time class="text-orange-400 inline mb-1"/> Comprehensive timeline from Make (1976) to modern tools
+
+- **Technical Deep Dive** {.text-blue-500}
+  - <carbon-book class="text-blue-500 inline mb-1"/> ["History and Future of Infrastructure as Code"](https://www.endoflineblog.com/history-and-future-of-infrastructure-as-code)
+  - <carbon-growth class="text-blue-400 inline mb-1"/> Detailed analysis of IaC generations and their characteristics
+
+- **Next Generation Approaches** {.text-purple-500}
+  - <carbon-rocket class="text-purple-500 inline mb-1"/> ["State of Infrastructure from Code 2023"](https://klo.dev/state-of-infrastructure-from-code-2023/)
+  - <carbon-development class="text-purple-400 inline mb-1"/> Comprehensive overview of modern IaC approaches
+
+- **Cloud Evolution** {.text-green-500}
+  - <carbon-cloud class="text-green-500 inline mb-1"/> ["10 Years of Cloud Infrastructure as Code"](https://medium.com/nordhero/10-years-of-cloud-infrastructure-as-code-history-and-trends-d307f8c4ce31)
+  - <carbon-analytics class="text-green-400 inline mb-1"/> Focus on serverless and modern cloud patterns
+
+</v-clicks>
