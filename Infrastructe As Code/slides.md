@@ -870,3 +870,371 @@ resource "aws_security_group" "allow_http" {
 </div>
 
 </div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2014-2018</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-warning class="text-yellow-500"/> Declarative Cloud Challenges
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4">
+
+<div class="flex flex-col gap-4">
+  <div v-click class="p-4 border rounded border-yellow-400">
+    <h3 class="font-bold flex items-center gap-2 text-yellow-400">
+      <carbon-code class="text-yellow-500"/> Custom DSL Limitations
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>No general-purpose programming facilities</li>
+      <li>Limited code reuse capabilities</li>
+      <li>Difficult to implement complex logic</li>
+      <li>Poor developer experience</li>
+    </ul>
+  </div>
+
+  <div v-click class="p-4 border rounded border-orange-400">
+    <h3 class="font-bold flex items-center gap-2 text-orange-400">
+      <carbon-document class="text-orange-500"/> Verbose Configuration
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>Full resource configuration required</li>
+      <li>Complex 'glue' configurations (IAM, networking)</li>
+      <li>Limited abstraction capabilities</li>
+      <li>Repetitive boilerplate code</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4">
+
+<div class="flex flex-col gap-4">
+
+  <div class="p-4 border rounded border-gray-400" v-click>
+    <h3 class="font-bold flex items-center gap-2 text-gray-400">
+      <carbon-development class="text-green-500"/> What Was Needed
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>Programming language constructs</li>
+      <li>Better abstraction capabilities</li>
+      <li>Reusable components</li>
+      <li>Modern development workflows</li>
+    </ul>
+  </div>
+
+  <div class="text-sm text-gray-400 mt-2" v-click>
+    These limitations led to the rise of the next generation of infrastructure as code tooling ...
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2018-Present</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-code class="text-blue-500"/> Infrastructure as Software
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+<div class="flex flex-col gap-4">
+  <div v-click class="p-4 border rounded border-blue-400">
+    <h3 class="font-bold text-blue-400">Key Characteristics</h3>
+    <ul class="mt-2 text-sm">
+      <li>General-purpose programming languages</li>
+      <li>Object-oriented abstractions</li>
+      <li>Package management</li>
+      <li>Modern IDE support</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4">
+  <div v-click class="p-4 border rounded border-green-400">
+    <h3 class="font-bold text-green-400">Benefits</h3>
+    <ul class="mt-2 text-sm">
+      <li>Shareable components</li>
+      <li>Type safety</li>
+      <li>Unit testing</li>
+      <li>Code reuse</li>
+    </ul>
+  </div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2019</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <logos-aws class="text-orange-500"/> AWS CDK
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```typescript
+import * as cdk from 'aws-cdk-lib';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as apigateway from 'aws-cdk-lib/aws-apigateway';
+
+export class ApiStack extends cdk.Stack {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
+
+    // Create Lambda function
+    const handler = new lambda.Function(this, 'Handler', {
+      runtime: lambda.Runtime.NODEJS_18_X,
+      code: lambda.Code.fromAsset('lambda'),
+      handler: 'handler.main',
+    });
+
+    // Create API Gateway
+    const api = new apigateway.RestApi(this, 'Api');
+    api.root.addMethod('GET', 
+      new apigateway.LambdaIntegration(handler));
+  }
+}
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <logos-typescript-icon class="text-blue-500"/>
+    <span>TypeScript-first Development</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-package class="text-green-500"/>
+    <a href="https://constructs.dev" target="_blank">
+      <span>Constructs Ecosystem</span>
+    </a>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-cloud class="text-orange-500"/>
+    <span>CloudFormation Under the Hood</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Full Programming Language Power</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Type Safety & IDE Support</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>AWS-only</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>All Cloudformation issues</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2018</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <vscode-icons-file-type-pulumi class="text-purple-500"/> Pulumi
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import * as aws from "@pulumi/aws";
+
+const bucket = new aws.s3.Bucket("my-bucket");
+
+const lambdaRole = new aws.iam.Role("lambdaRole", {
+    assumeRolePolicy: aws.iam.assumeRolePolicyForPrincipal({
+        Service: "lambda.amazonaws.com"
+    }),
+});
+
+const lambda = new aws.lambda.Function("myLambda", {
+    code: new pulumi.asset.AssetArchive({
+        ".": new pulumi.asset.FileArchive("./app"),
+    }),
+    role: lambdaRole.arn,
+    handler: "index.handler",
+    runtime: "nodejs18.x",
+});
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-cloud-satellite class="text-purple-500"/>
+    <span>Multi-Cloud Native</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-code class="text-blue-500"/>
+    <span>Multiple Language Support</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-flow class="text-green-500"/>
+    <span>State Management Built-in</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Provider-agnostic</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Language Choice Flexibility</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Learning Curve</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2020</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <vscode-icons-file-type-sst class="text-orange-500"/> SST (Serverless Stack)
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```typescript
+import { StackContext, Api, Auth } from "@serverless-stack/resources";
+
+export function MyStack({ stack }: StackContext) {
+  const auth = new Auth(stack, "auth", {
+    login: ["email"],
+  });
+
+  const api = new Api(stack, "api", {
+    authorizer: "iam",
+    routes: {
+      "GET  /notes": "functions/list.main",
+      "POST /notes": "functions/create.main",
+    },
+  });
+
+  auth.attachPermissionsToUser(api);
+
+  return {
+    api: api.url,
+    auth: auth.auth.userPoolId,
+  };
+}
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-application class="text-blue-500"/>
+    <span>Full-Stack Framework</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-development class="text-green-500"/>
+    <span>Live Lambda Development</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-cloud class="text-orange-500"/>
+    <span>Initially built on AWS CDK, but recently <a href="https://www.pulumi.com/blog/from-cdk-pulumi-evolution-of-sst/" target="_blank">
+      migrated to Pulumi.
+    </a></span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Higher-Level Abstractions</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Developer Experience Focus</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
