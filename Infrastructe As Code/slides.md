@@ -19,7 +19,7 @@ mdc: true
 
 <div class="pt-12">
   <span class="text-xl text-opacity-80">
-    Presented by [Your Name]
+    Presented by Amr Awad
   </span>
 </div>
 
@@ -97,6 +97,8 @@ layout: default
 
 </v-clicks>
 
+## TODO review the 2 following slides for describing IaC
+
 ---
 layout: two-cols
 ---
@@ -126,7 +128,6 @@ resource "aws_s3_bucket" "logs" {
 <v-clicks>
 
 - Define infrastructure in code files
-- Declarative approach
 - Version controlled with Git
 - Reproducible across environments
 - Automated deployment pipelines
@@ -166,3 +167,248 @@ class: text-center
   <p class="text-sm">Team-wide infrastructure visibility</p>
 </div>
 </div>
+
+---
+layout: center
+---
+
+# The Evolution of Infrastructure as Code
+
+<div class="fixed top-4 w-full flex justify-center">
+  <div class="timeline-header flex items-center gap-8">
+    <!-- Timeline items will be added dynamically -->
+  </div>
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">1976</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <vscode-icons-file-type-makefile/> Make
+  </h2>
+  <span class="text-gray-400 text-lg font-light">First Steps in Automation: Configuration Management</span>
+</div>
+
+::left::
+<div class="mt-2 p-4">
+
+```makefile
+install:
+    mkdir -p ~/myapp
+    cp config.json ~/myapp/
+    chmod +x ~/myapp/start.sh
+
+configure:
+    echo "PORT=3000" > ~/myapp/.env
+    echo "DEBUG=true" >> ~/myapp/.env
+    ./start.sh
+```
+
+</div>
+
+::right::
+<div class="mt-2 p-4 mb-4" v-click>
+
+### Key Features {class="text-gray-400"}
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <carbon:terminal class="text-blue-500"/>
+    <span>Shell commands automation</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <carbon:document class="text-purple-500"/>
+    <span>File-based operations</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <carbon:build-image class="text-orange-500"/>
+    <span>Build process focus</span>
+  </div>
+</div>
+</div>
+
+
+<div class="px-4" v-click>
+
+### Trade-offs {class="text-gray-400"}
+
+<div class="grid grid-cols-2 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Simple syntax</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Universal tool</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Language agnostic</span>
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:close-filled class="text-red-500"/>
+      <span>No state tracking</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:close-filled class="text-red-500"/>
+      <span>Error-prone</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:close-filled class="text-red-500"/>
+      <span>Single machine</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">1993</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-code class="text-blue-500"/> CFEngine
+  </h2>
+  <span class="text-gray-400 text-lg font-light">First True Infrastructure Tool</span>
+</div>
+
+::left::
+<div class="mt-2 p-4">
+
+```
+bundle agent example {
+  files:
+    "/etc/nginx/nginx.conf"
+      perms => mog("644", "root", "root"),
+      create => "true",
+      edit_line => nginx_config;
+      
+  processes:
+    "nginx"
+      restart_class => "restart_nginx";
+}
+```
+
+</div>
+
+::right::
+<div class="mt-2 p-4 mb-4" v-click>
+
+### Key Features {class="text-gray-400"}
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <material-symbols-light-handshake class="text-blue-500"/>
+    <span>Promise Theory based</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <carbon-gears class="text-blue-500"/>
+    <span>Self-healing systems</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <carbon-checkmark class="text-blue-500"/>
+    <span>Continuous verification</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4" v-click>
+
+### Trade-offs {class="text-gray-400"}
+
+<div class="grid grid-cols-2 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Lightweight agent</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Fast execution</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>True automation</span>
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:close-filled class="text-red-500"/>
+      <span>Steep learning curve</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:close-filled class="text-red-500"/>
+      <span>Complex syntax</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+      <carbon:close-filled class="text-red-500"/>
+      <span>Limited adoption</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+# 2005: Configuration Management
+## Puppet: Declarative Infrastructure
+
+::left::
+
+```ruby
+package { 'nginx':
+  ensure => installed
+}
+
+service { 'nginx':
+  ensure  => running,
+  enable  => true,
+  require => Package['nginx']
+}
+```
+
+::right::
+
+<div class="mt-12">
+
+### Key Features
+- Declarative DSL
+- Resource dependencies
+- State management
+
+<div v-click class="mt-8">
+
+### Trade-offs
+<div class="pros-cons-grid">
+  <div class="pros">
+    <div class="pros-header">✅ Pros</div>
+    <ul>
+      <li>Declarative approach</li>
+      <li>Idempotent operations</li>
+      <li>Configuration drift detection</li>
+    </ul>
+  </div>
+  <div class="cons">
+    <div class="cons-header">❌ Cons</div>
+    <ul>
+      <li>Required agents</li>
+      <li>Complex Ruby DSL</li>
+      <li>Host-level only</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+</div> 

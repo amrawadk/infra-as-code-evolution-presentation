@@ -8,6 +8,9 @@
     "export": "slidev export"
   },
   "dependencies": {
+    "@iconify-json/carbon": "^1.2.4",
+    "@iconify-json/material-symbols-light": "^1.2.6",
+    "@iconify-json/vscode-icons": "^1.2.2",
     "@slidev/cli": "^0.50.0-beta.5",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
