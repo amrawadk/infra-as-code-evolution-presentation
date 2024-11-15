@@ -1238,3 +1238,434 @@ export function MyStack({ stack }: StackContext) {
 
 </div>
 
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">Present Day</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-road class="text-blue-500"/> The Road Ahead
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+<div class="flex flex-col gap-4">
+  <div v-click class="p-4 border rounded border-orange-400">
+    <h3 class="font-bold flex items-center gap-2 text-orange-400">
+      <carbon-warning class="text-orange-500"/> Current Limitations
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>Service-level abstractions only</li>
+      <li>Deep cloud service knowledge required</li>
+      <li>Infrastructure isolated from application code</li>
+      <li>Complex deployment coordination</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4">
+
+<div class="flex flex-col gap-4">
+  <div v-click class="p-4 border rounded border-blue-400">
+    <h3 class="font-bold flex items-center gap-2 text-blue-400">
+      <carbon-idea class="text-blue-500"/> What We Need
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>Business-level abstractions</li>
+      <li>Closer integration with application code</li>
+      <li>Intent-based infrastructure</li>
+      <li>Unified deployment workflows</li>
+    </ul>
+  </div>
+
+  <div class="text-sm text-gray-400 mt-4" v-click>
+    Moving towards infrastructure that adapts to your application's needs...
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">Next Generation</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-code class="text-purple-500"/> New Programming Languages
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```ts
+bring cloud;
+
+let api = new cloud.Api();
+let bucket = new cloud.Bucket();
+
+api.get("/files", inflight (req) => {
+  let files = bucket.list();
+  return {
+    status: 200,
+    body: files
+  };
+});
+
+api.post("/files", inflight (req) => {
+  let key = req.body.key;
+  let data = req.body.data;
+  bucket.put(key, data);
+  return {
+    status: 201
+  };
+});
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 my-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-cloud class="text-green-500"/>
+    <span>Cloud-native by design</span>
+  </div>
+</div>
+
+
+### Examples {class="text-gray-400" v-click}
+
+<div class="flex flex-col gap-2 mt-4">
+
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <logos-winglang-icon class="text-blue-500"/>
+    <span>Wing Language</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <material-symbols-light-dark-mode-rounded class="text-purple-500"/>
+    <span>Darklang</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Purpose-built for cloud</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Enhanced development experience</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>New language learning curve</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Limited ecosystem</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">Next Generation</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-api class="text-blue-500"/> SDK-Based Approach
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```typescript
+import { api, storage } from '@nitric/sdk'
+
+// Create a bucket
+const files = storage('files').bucket()
+
+// Create an API
+api('public').get('/files', async (ctx) => {
+  const fileList = await files.list()
+  return ctx.ok(fileList)
+})
+
+api('public').post('/files', async (ctx) => {
+  const { key, data } = ctx.req.body
+  await files.file(key).write(data)
+  return ctx.created()
+})
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 my-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-api-1 class="text-green-500"/>
+    <span>Abstracted Cloud APIs</span>
+  </div>
+</div>
+
+
+### Examples {class="text-gray-400" v-click}
+
+<div class="flex flex-col gap-2 mt-4">
+
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <bx-cloud-lightning class="text-blue-500"/>
+    <span>Ampt</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-arrow-right class="text-purple-500"/>
+    <span>Nitric</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Use existing languages</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Familiar development model</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Vendor lock-in to SDK</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Limited community ecosystem</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">Next Generation</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-code-reference class="text-green-500"/> SDK + Annotations
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```typescript
+// Encore example
+import { api, Cache } from 'encore'
+
+// Define cache with annotation
+@cache({ ttl: '24h' })
+class FileCache {
+  async list(): Promise<File[]> {
+    // ... implementation
+  }
+}
+
+// Define API endpoint
+@api.get('/files')
+async function getFiles() {
+  const files = await cache.list()
+  return { files }
+}
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-development class="text-green-500"/>
+    <span>Rich Development Experience</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-cloud class="text-orange-500"/>
+    <span>Infrastructure Generation</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Examples {class="text-gray-400" v-click}
+
+<div class="flex gap-6 my-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <div class="text-blue-500 font-bold text-lg">e</div>
+    <span>Encore</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-rocket />
+    <span>Shuttle</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <logos-aws />
+    <span>AWS Chalice</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Framework-style development</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Strong developer tooling</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Double learning curve</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Framework lock-in</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">Next Generation</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-intent-request-scale-out class="text-orange-500"/> Pure Annotations
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```typescript
+import { S3 } from 'aws-sdk'
+import express from 'express'
+
+// @klotho::persist {
+//   id = "files"
+//   type = "object-store"
+// }
+const files = new S3()
+
+// @klotho::expose {
+//   id = "public-api"
+//   type = "http"
+// }
+app.get('/files', async (req, res) => {
+  const fileList = await files.listObjects().promise()
+  res.json(fileList)
+})
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-intent-request-scale-out class="text-blue-500"/>
+    <span>Architecture from Code</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-code class="text-orange-500"/>
+    <span>Native SDK Usage</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Examples {class="text-gray-400" v-click}
+
+<div class="flex flex-col gap-2 my-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-intent-request-scale-out class="text-blue-500"/>
+    <span>Klotho</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Use native cloud SDKs</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Minimal learning curve</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Architecture-level abstractions</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Limited infrastructure control</span>
+    </div>
+  </div>
+</div>
+
+</div>
