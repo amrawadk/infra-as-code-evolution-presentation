@@ -1125,10 +1125,6 @@ const lambda = new aws.lambda.Function("myLambda", {
     <carbon-code class="text-blue-500"/>
     <span>Multiple Language Support</span>
   </div>
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
-    <carbon-flow class="text-green-500"/>
-    <span>State Management Built-in</span>
-  </div>
 </div>
 </div>
 
@@ -1204,7 +1200,7 @@ export function MyStack({ stack }: StackContext) {
 <div class="flex flex-col gap-2 mt-4">
   <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
     <carbon-application class="text-blue-500"/>
-    <span>Full-Stack Framework</span>
+    <span>Higher-level Abstractions</span>
   </div>
   <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
     <carbon-development class="text-green-500"/>
@@ -1725,4 +1721,3 @@ layout: center
   - <carbon-code-reference class="text-purple-400 inline mb-1"/> Infrastructure derived from intent
 
 </v-clicks>
-
