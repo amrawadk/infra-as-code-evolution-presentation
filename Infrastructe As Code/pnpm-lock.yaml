@@ -11,6 +11,9 @@ importers:
       '@iconify-json/carbon':
         specifier: ^1.2.4
         version: 1.2.4
+      '@iconify-json/logos':
+        specifier: ^1.2.3
+        version: 1.2.3
       '@iconify-json/material-symbols-light':
         specifier: ^1.2.6
         version: 1.2.6
@@ -477,6 +480,9 @@ packages:
 
   '@iconify-json/carbon@1.2.4':
     resolution: {integrity: sha512-DhW2jjMVGwV0DLHc0cmDYohdtGxMra8UuwgjHrryPy+rQX4gXhJwCBBVP2h2UG/92AoRCTn7zUJve4WvY5MLYg==}
+
+  '@iconify-json/logos@1.2.3':
+    resolution: {integrity: sha512-JLHS5hgZP1b55EONAWNeqBUuriRfRNKWXK4cqYx0PpVaJfIIMiiMxFfvoQiX/bkE9XgkLhcKmDUqL3LXPdXPwQ==}
 
   '@iconify-json/material-symbols-light@1.2.6':
     resolution: {integrity: sha512-TpDzfXt5Br1e7xuzKEy63bEuc56xsQBS07Am4fpXqQWvtvDxAQ4y1Ik3ca3ougmNPtW2dsR1XQmjMxNb5mGoUw==}
@@ -3321,6 +3327,10 @@ snapshots:
   '@floating-ui/utils@0.2.8': {}
 
   '@iconify-json/carbon@1.2.4':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/logos@1.2.3':
     dependencies:
       '@iconify/types': 2.0.0
 

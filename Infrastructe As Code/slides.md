@@ -30,6 +30,8 @@ mdc: true
   </a>
 </div>
 
+## TODO add an intro slide
+
 ---
 layout: section
 ---
@@ -189,11 +191,10 @@ layout: two-cols-header
   <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
     <vscode-icons-file-type-makefile/> Make
   </h2>
-  <span class="text-gray-400 text-lg font-light">First Steps in Automation: Configuration Management</span>
 </div>
 
 ::left::
-<div class="mt-2 p-4">
+<div class="mt-2 p-4 h-[80vh]">
 
 ```makefile
 install:
@@ -210,55 +211,45 @@ configure:
 </div>
 
 ::right::
-<div class="mt-2 p-4 mb-4" v-click>
 
-### Key Features {class="text-gray-400"}
+<div class="mt-2 p-4 mb-4">
+
 <div class="flex flex-col gap-2 mt-4">
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded"  v-click>
     <carbon:terminal class="text-blue-500"/>
-    <span>Shell commands automation</span>
+    <span>Configuration Management</span>
   </div>
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded"  v-click>
     <carbon:document class="text-purple-500"/>
-    <span>File-based operations</span>
+    <span>Utilizes shell commands</span>
   </div>
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded"  v-click>
     <carbon:build-image class="text-orange-500"/>
-    <span>Build process focus</span>
+    <span>Focuses on build processes</span>
   </div>
 </div>
 </div>
 
 
-<div class="px-4" v-click>
+<div class="px-4">
 
-### Trade-offs {class="text-gray-400"}
+### Trade-offs {class="text-gray-400" v-click}
 
-<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="grid grid-cols-1 gap-4 mt-4">
   <div class="flex flex-col gap-2">
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded"  v-click>
       <carbon:checkmark-filled class="text-green-500"/>
       <span>Simple syntax</span>
     </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded"  v-click>
       <carbon:checkmark-filled class="text-green-500"/>
-      <span>Universal tool</span>
+      <span>Runs on any Unix system.</span>
     </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
-      <carbon:checkmark-filled class="text-green-500"/>
-      <span>Language agnostic</span>
-    </div>
-  </div>
-  <div class="flex flex-col gap-2">
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded"  v-click>
       <carbon:close-filled class="text-red-500"/>
       <span>No state tracking</span>
     </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
-      <carbon:close-filled class="text-red-500"/>
-      <span>Error-prone</span>
-    </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded"  v-click>
       <carbon:close-filled class="text-red-500"/>
       <span>Single machine</span>
     </div>
@@ -270,22 +261,18 @@ configure:
 ---
 layout: two-cols-header
 ---
----
-layout: two-cols-header
----
 
 <div class="flex flex-col items-start">
   <span class="text-gray-400 text-sm tracking-wide">1993</span>
   <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
     <carbon-code class="text-blue-500"/> CFEngine
   </h2>
-  <span class="text-gray-400 text-lg font-light">First True Infrastructure Tool</span>
 </div>
 
 ::left::
-<div class="mt-2 p-4">
+<div class="mt-2 p-4 h-[80vh]">
 
-```
+```ts
 bundle agent example {
   files:
     "/etc/nginx/nginx.conf"
@@ -302,54 +289,39 @@ bundle agent example {
 </div>
 
 ::right::
-<div class="mt-2 p-4 mb-4" v-click>
+<div class="mt-2 p-4 mb-4">
 
-### Key Features {class="text-gray-400"}
 <div class="flex flex-col gap-2 mt-4">
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
-    <material-symbols-light-handshake class="text-blue-500"/>
-    <span>Promise Theory based</span>
-  </div>
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
     <carbon-gears class="text-blue-500"/>
-    <span>Self-healing systems</span>
+    <span>Built by Mark Burgess while pursuing a postdoctorate in theoritical physics</span>
   </div>
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
     <carbon-checkmark class="text-blue-500"/>
-    <span>Continuous verification</span>
+    <span>Enables managing multiple Unix workstations</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <material-symbols-light-handshake class="text-blue-500"/>
+    <span>Introduced a declarative DSL to manage complexity</span>
   </div>
 </div>
 </div>
 
-<div class="px-4" v-click>
+<div class="px-4">
 
-### Trade-offs {class="text-gray-400"}
+### Trade-offs {class="text-gray-400" v-click}
 
-<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="grid grid-cols-1 gap-4 mt-4">
   <div class="flex flex-col gap-2">
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
       <carbon:checkmark-filled class="text-green-500"/>
-      <span>Lightweight agent</span>
+      <span>Multiple machines with a lightweight agent</span>
     </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
-      <carbon:checkmark-filled class="text-green-500"/>
-      <span>Fast execution</span>
-    </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
-      <carbon:checkmark-filled class="text-green-500"/>
-      <span>True automation</span>
-    </div>
-  </div>
-  <div class="flex flex-col gap-2">
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
       <carbon:close-filled class="text-red-500"/>
-      <span>Steep learning curve</span>
+      <span>Steep learning curve due to complex syntax</span>
     </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
-      <carbon:close-filled class="text-red-500"/>
-      <span>Complex syntax</span>
-    </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
       <carbon:close-filled class="text-red-500"/>
       <span>Limited adoption</span>
     </div>
@@ -358,14 +330,86 @@ bundle agent example {
 
 </div>
 
+
 ---
 layout: two-cols-header
 ---
 
-# 2005: Configuration Management
-## Puppet: Declarative Infrastructure
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2000-2006</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <carbon-growth class="text-blue-500"/> The Scale Problem
+  </h2>
+</div>
 
 ::left::
+<div class="mt-2 p-4">
+
+<div class="flex flex-col gap-4">
+  <div v-click class="p-4 border rounded border-gray-400">
+    <h3 class="font-bold text-gray-400">Traditional Approach</h3>
+    <ul class="mt-2 text-sm">
+      <li>Buy physical servers</li>
+      <li>Set up in data centers</li>
+      <li>Long procurement cycles</li>
+      <li>High upfront costs</li>
+    </ul>
+  </div>
+
+  <div v-click class="p-4 border rounded border-gray-400">
+    <h3 class="font-bold text-gray-400">Growing Demands</h3>
+    <ul class="mt-2 text-sm">
+      <li>Internet boom</li>
+      <li>Web-scale applications</li>
+      <li>Need for rapid scaling</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4">
+
+<div class="flex flex-col gap-4">
+  <div class="p-4 border rounded border-gray-400" v-click>
+    <h3 class="font-bold flex items-center gap-2 text-gray-400">
+      <carbon-cloud class="text-blue-500"/> Enter AWS EC2 (2006)
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>Virtual machines on demand</li>
+      <li>Pay-as-you-go model</li>
+      <li>Minutes vs. months to deploy</li>
+      <li>Democratized scaling</li>
+    </ul>
+  </div>
+
+  <div class="text-sm text-gray-400 mt-4" v-click>
+    Infrastructure scaling became everyone's challenge, not just large enterprises ...
+  </div>
+</div>
+
+</div>
+
+
+
+---
+layout: two-cols-header
+---
+
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2005</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <logos-puppet-icon class="text-blue-500"/> Puppet
+  </h2>
+</div>
+
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
 
 ```ruby
 package { 'nginx':
@@ -379,36 +423,46 @@ service { 'nginx':
 }
 ```
 
+</div>
+
+
 ::right::
 
-<div class="mt-12">
 
-### Key Features
-- Declarative DSL
-- Resource dependencies
-- State management
+<div class="mt-2 p-4 mb-4">
 
-<div v-click class="mt-8">
-
-### Trade-offs
-<div class="pros-cons-grid">
-  <div class="pros">
-    <div class="pros-header">✅ Pros</div>
-    <ul>
-      <li>Declarative approach</li>
-      <li>Idempotent operations</li>
-      <li>Configuration drift detection</li>
-    </ul>
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-gears class="text-blue-500"/>
+    <span>Declarative DSL</span>
   </div>
-  <div class="cons">
-    <div class="cons-header">❌ Cons</div>
-    <ul>
-      <li>Required agents</li>
-      <li>Complex Ruby DSL</li>
-      <li>Host-level only</li>
-    </ul>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <material-symbols-light-handshake class="text-blue-500"/>
+    <span>State Management</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Idempotent Operations</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Configuration Drift Detection</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Much simpler than CF Engine</span>
+    </div>
   </div>
 </div>
 
 </div>
-</div> 
+
