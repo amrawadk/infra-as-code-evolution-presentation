@@ -1669,3 +1669,60 @@ app.get('/files', async (req, res) => {
 </div>
 
 </div>
+
+---
+layout: quote
+---
+
+# Let's recap
+
+---
+layout: center
+---
+
+# Evolution of Infrastructure as Code
+
+<v-clicks>
+
+- **2005-2010: Configuration Management** {.text-orange-500}
+  - <carbon-bare-metal-server class="text-orange-500 inline mb-1"/> CFEngine, Puppet, Chef, Ansible
+  - <carbon-settings class="text-orange-400 inline mb-1"/> Focus on server configuration and management
+
+- **2011-2017: Declarative Cloud** {.text-blue-500}
+  - <carbon-cloud class="text-blue-500 inline mb-1"/> CloudFormation, Terraform, ARM Templates
+  - <carbon-document class="text-blue-400 inline mb-1"/> Cloud resource definitions in YAML, JSON, HCL
+
+- **2018-2022: Infrastructure as Software** {.text-purple-500}
+  - <carbon-code class="text-purple-500 inline mb-1"/> AWS CDK, Pulumi, SST
+  - <carbon-application class="text-purple-400 inline mb-1"/> Programming languages for infrastructure
+
+- **2023+: Infrastructure from Code** {.text-green-500}
+  - <carbon-code-reference class="text-green-500 inline mb-1"/> Wing, Nitric, Encore, Klotho
+  - <carbon-intent-request-scale-out class="text-green-400 inline mb-1"/> Infrastructure derived from application code
+
+</v-clicks>
+
+---
+layout: center
+---
+
+# Key Trends in Infrastructure as Code
+
+<br>
+
+<v-clicks>
+
+- **Higher Abstractions** {.text-green-500}
+  - <carbon-arrow-up class="text-green-500 inline mb-1"/> From server configs to business logic
+  - <carbon-chart-relationship class="text-green-400 inline mb-1"/> Increasing levels of abstraction
+
+- **Better Developer Experience** {.text-blue-500}
+  - <carbon-development class="text-blue-500 inline mb-1"/> Modern development workflows
+  - <carbon-tools class="text-blue-400 inline mb-1"/> Rich tooling and IDE support
+
+- **Closer to Application Code** {.text-purple-500}
+  - <carbon-integration class="text-purple-500 inline mb-1"/> Unified development experience
+  - <carbon-code-reference class="text-purple-400 inline mb-1"/> Infrastructure derived from intent
+
+</v-clicks>
+
