@@ -14,23 +14,25 @@ title: From Scripts to Strategy
 mdc: true
 ---
 
-# From Scripts to Strategy
-## The Past, Present, and Future of Infrastructure as Code
+## From Scripts to Strategy {.text-gray-400 .mb-8}
+# The Past, Present, and Future of Infrastructure as Code
 
-<div class="pt-12">
-  <span class="text-xl text-opacity-80">
-    Presented by Amr Awad
-  </span>
+<div class="pt-12 flex items-center justify-center gap-4">
+  <img
+    class="w-24 h-24 rounded-full"
+    src="https://prod-files-secure.s3.us-west-2.amazonaws.com/9abbeb10-a6cd-4555-b807-0a131d43477d/88153554-d72e-4b28-a1b8-2464516d8baf/public.avif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45GO43JXI4%2F20241115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241115T120051Z&X-Amz-Expires=86400&X-Amz-Signature=2da2482259084b3f6cc602b9d7f3ff463de02c53de5aa51c62c84786c9cfbf75&X-Amz-SignedHeaders=host&x-id=GetObject"
+    alt="Amr Awad"
+  />
+  <div class="flex flex-col items-start">
+    <span class="text-2xl">Amr Awad</span>
+    <span class="text-gray-400">Staff Software Engineer @ Cur8 Capital</span>
+  </div>
 </div>
 
-<div class="abs-br m-6 flex gap-2">
-  <a href="https://github.com/yourusername" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
+---
 
 ## TODO add an intro slide
+## TODO add slide numbers
 
 ---
 layout: section
