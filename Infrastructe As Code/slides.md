@@ -466,3 +466,161 @@ service { 'nginx':
 
 </div>
 
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2009</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <vscode-icons-file-type-chef class="text-red-500"/> Chef
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```ruby
+package 'nginx' do
+  action :install
+end
+
+template '/etc/nginx/nginx.conf' do
+  source 'nginx.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  notifies :restart, 'service[nginx]'
+end
+
+service 'nginx' do
+  action [:enable, :start]
+  supports status: true, restart: true, reload: true
+end
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <logos-ruby class="text-red-500"/>
+    <span>Full Ruby DSL</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-code class="text-blue-500"/>
+    <span>Procedural approach to configuration</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-development class="text-green-500"/>
+    <span>Developer-friendly workflow</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Powerful Ruby programming model</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Rich ecosystem of cookbooks</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Steeper learning curve for non-developers</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Complex Ruby-based configuration</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: two-cols-header
+---
+
+<div class="flex flex-col items-start">
+  <span class="text-gray-400 text-sm tracking-wide">2012</span>
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <vscode-icons-file-type-ansible class="text-red-500"/> Ansible
+  </h2>
+</div>
+
+::left::
+
+<div class="mt-2 p-4 h-[80vh]">
+
+```yaml
+- name: Configure web server
+  hosts: webservers
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+```
+
+</div>
+
+::right::
+
+<div class="mt-2 p-4 mb-4">
+
+<div class="flex flex-col gap-2 mt-4">
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <carbon-connect class="text-blue-500"/>
+    <span>Agentless (SSH-based)</span>
+  </div>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+    <vscode-icons-file-type-yaml class="text-green-500"/>
+    <span>YAML-based declarative syntax</span>
+  </div>
+</div>
+</div>
+
+<div class="px-4">
+
+### Trade-offs {class="text-gray-400" v-click}
+
+<div class="grid grid-cols-1 gap-4 mt-4">
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>No agent installation required</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Simple, readable YAML syntax</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:checkmark-filled class="text-green-500"/>
+      <span>Lower barrier to entry</span>
+    </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+      <carbon:close-filled class="text-red-500"/>
+      <span>Performance at scale (SSH overhead)</span>
+    </div>
+  </div>
+</div>
+
+</div>
