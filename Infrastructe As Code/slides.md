@@ -133,7 +133,21 @@ cols: 1-2
 ---
 
 ## TODO add slide numbers
-## TODO add outline slide
+
+---
+layout: center
+---
+
+# Agenda
+
+<v-clicks>
+
+- What is Infrastructure as Code (IaC)?
+- The Evolution of IaC
+- Next Generation of IaC tooling
+- Making the Right Choice
+
+</v-clicks>
 
 ---
 layout: section
