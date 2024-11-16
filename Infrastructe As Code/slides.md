@@ -1378,6 +1378,28 @@ export function MyStack({ stack }: StackContext) {
 </div>
 
 ---
+layout: center
+---
+
+# Quick Recap
+
+<v-clicks>
+
+- **2005-2010: Configuration Management** {.text-orange-500}
+  - <carbon-bare-metal-server class="text-orange-500 inline mb-1"/> CFEngine, Puppet, Chef, Ansible
+  - <carbon-settings class="text-orange-400 inline mb-1"/> Focus on server configuration and management
+
+- **2011-2017: Declarative Cloud** {.text-blue-500}
+  - <carbon-cloud class="text-blue-500 inline mb-1"/> CloudFormation, Terraform, ARM Templates
+  - <carbon-document class="text-blue-400 inline mb-1"/> Cloud resource definitions in YAML, JSON, HCL
+
+- **2018-Present: Imperative Cloud** {.text-purple-500}
+  - <carbon-code class="text-purple-500 inline mb-1"/> AWS CDK, Pulumi, SST
+  - <carbon-application class="text-purple-400 inline mb-1"/> Programming languages for infrastructure
+
+</v-clicks>
+
+---
 layout: two-cols-header
 ---
 
@@ -1478,22 +1500,22 @@ api.post("/files", inflight (req) => {
 <div class="mt-2 p-4 mb-4">
 
 <div class="flex flex-col gap-2 my-4">
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
     <carbon-cloud class="text-green-500"/>
     <span>Cloud-native by design</span>
   </div>
 </div>
 
 
-### Examples {class="text-gray-400" v-click}
+### Examples {class="text-gray-400"}
 
 <div class="flex flex-col gap-2 mt-4">
 
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
     <logos-winglang-icon class="text-blue-500"/>
     <span>Wing Language</span>
   </div>
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
     <material-symbols-light-dark-mode-rounded class="text-purple-500"/>
     <span>Darklang</span>
   </div>
@@ -1568,24 +1590,28 @@ api('public').post('/files', async (ctx) => {
 <div class="mt-2 p-4 mb-4">
 
 <div class="flex flex-col gap-2 my-4">
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
     <carbon-api-1 class="text-green-500"/>
     <span>Abstracted Cloud APIs</span>
   </div>
 </div>
 
 
-### Examples {class="text-gray-400" v-click}
+### Examples {class="text-gray-400"}
 
-<div class="flex flex-col gap-2 mt-4">
+<div class="flex gap-2 mt-4">
 
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
     <bx-cloud-lightning class="text-blue-500"/>
     <span>Ampt</span>
   </div>
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
     <carbon-arrow-right class="text-purple-500"/>
     <span>Nitric</span>
+  </div>
+    <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
+    <div class="text-blue-500 font-bold text-lg">e</div>
+    <span>Encore</span>
   </div>
 </div>
 </div>
@@ -1632,23 +1658,28 @@ layout: two-cols-header
 
 <div class="mt-2 p-4 h-[80vh]">
 
-```typescript
-// Encore example
-import { api, Cache } from 'encore'
+```rs
+use axum::{routing::get, Json, Router};
+use sqlx::PgPool;
 
-// Define cache with annotation
-@cache({ ttl: '24h' })
-class FileCache {
-  async list(): Promise<File[]> {
-    // ... implementation
-  }
+async fn hello_db(
+    pool: State<PgPool>
+) -> &'static str {
+    sqlx::query("SELECT 1")
+        .execute(&pool)
+        .await
+        .unwrap();
 }
 
-// Define API endpoint
-@api.get('/files')
-async function getFiles() {
-  const files = await cache.list()
-  return { files }
+#[shuttle_runtime::main]
+async fn main(
+    #[shuttle_shared_db::Postgres] pool: PgPool,
+) -> shuttle_axum::ShuttleAxum {
+    let router = Router::new()
+        .route("/", get(hello_db))
+        .with_state(pool);
+
+    Ok(router.into())
 }
 ```
 
@@ -1659,11 +1690,11 @@ async function getFiles() {
 <div class="mt-2 p-4 mb-4">
 
 <div class="flex flex-col gap-2 mt-4">
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
     <carbon-development class="text-green-500"/>
     <span>Rich Development Experience</span>
   </div>
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
     <carbon-cloud class="text-orange-500"/>
     <span>Infrastructure Generation</span>
   </div>
@@ -1672,20 +1703,12 @@ async function getFiles() {
 
 <div class="px-4">
 
-### Examples {class="text-gray-400" v-click}
+### Examples {class="text-gray-400"}
 
 <div class="flex gap-6 my-4">
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
-    <div class="text-blue-500 font-bold text-lg">e</div>
-    <span>Encore</span>
-  </div>
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
+  <div class="flex items-center gap-2 hover:bg-gray-50 rounded">
     <carbon-rocket />
     <span>Shuttle</span>
-  </div>
-  <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
-    <logos-aws />
-    <span>AWS Chalice</span>
   </div>
 </div>
 </div>
@@ -1701,16 +1724,12 @@ async function getFiles() {
       <span>Framework-style development</span>
     </div>
     <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
-      <carbon:checkmark-filled class="text-green-500"/>
-      <span>Strong developer tooling</span>
-    </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
       <carbon:close-filled class="text-red-500"/>
       <span>Double learning curve</span>
     </div>
     <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
       <carbon:close-filled class="text-red-500"/>
-      <span>Framework lock-in</span>
+      <span>More effort to get them to play nice together</span>
     </div>
   </div>
 </div>
@@ -1733,23 +1752,28 @@ layout: two-cols-header
 <div class="mt-2 p-4 h-[80vh]">
 
 ```typescript
-import { S3 } from 'aws-sdk'
-import express from 'express'
+const app = express();
 
-// @klotho::persist {
-//   id = "files"
-//   type = "object-store"
-// }
-const files = new S3()
+/* @klotho::persist {
+ *   id = "petsByOwner"
+ * }
+ */
+const petsByOwner = new Map();
 
-// @klotho::expose {
-//   id = "public-api"
-//   type = "http"
-// }
-app.get('/files', async (req, res) => {
-  const fileList = await files.listObjects().promise()
-  res.json(fileList)
-})
+async function addPetName(req, res) {
+  const {pet, owner} = req.body;
+  await petsByOwner.set(owner, pet);
+}
+
+app.post('/pets', addPetName);
+/*
+ * @klotho::expose {
+ *  id = "pet-api"
+ *  target = "public"
+ *  description = "Exposes the Pet API to the internet"
+ * }
+ */
+app.listen(3000);
 ```
 
 </div>
@@ -1761,7 +1785,7 @@ app.get('/files', async (req, res) => {
 <div class="flex flex-col gap-2 mt-4">
   <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
     <carbon-intent-request-scale-out class="text-blue-500"/>
-    <span>Architecture from Code</span>
+    <span>Architecture <strong> from </strong>Code</span>
   </div>
   <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
     <carbon-code class="text-orange-500"/>
@@ -1790,10 +1814,6 @@ app.get('/files', async (req, res) => {
   <div class="flex flex-col gap-2">
     <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
       <carbon:checkmark-filled class="text-green-500"/>
-      <span>Use native cloud SDKs</span>
-    </div>
-    <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
-      <carbon:checkmark-filled class="text-green-500"/>
       <span>Minimal learning curve</span>
     </div>
     <div class="flex items-center gap-2 hover:bg-gray-50 rounded" v-click>
@@ -1809,37 +1829,6 @@ app.get('/files', async (req, res) => {
 
 </div>
 
----
-layout: center
----
-
-# Let's recap
-
----
-layout: center
----
-
-# Evolution of Infrastructure as Code
-
-<v-clicks>
-
-- **2005-2010: Configuration Management** {.text-orange-500}
-  - <carbon-bare-metal-server class="text-orange-500 inline mb-1"/> CFEngine, Puppet, Chef, Ansible
-  - <carbon-settings class="text-orange-400 inline mb-1"/> Focus on server configuration and management
-
-- **2011-2017: Declarative Cloud** {.text-blue-500}
-  - <carbon-cloud class="text-blue-500 inline mb-1"/> CloudFormation, Terraform, ARM Templates
-  - <carbon-document class="text-blue-400 inline mb-1"/> Cloud resource definitions in YAML, JSON, HCL
-
-- **2018-2022: Infrastructure as Software** {.text-purple-500}
-  - <carbon-code class="text-purple-500 inline mb-1"/> AWS CDK, Pulumi, SST
-  - <carbon-application class="text-purple-400 inline mb-1"/> Programming languages for infrastructure
-
-- **2023+: Infrastructure from Code** {.text-green-500}
-  - <carbon-code-reference class="text-green-500 inline mb-1"/> Wing, Nitric, Encore, Klotho
-  - <carbon-intent-request-scale-out class="text-green-400 inline mb-1"/> Infrastructure derived from application code
-
-</v-clicks>
 
 ---
 layout: center
