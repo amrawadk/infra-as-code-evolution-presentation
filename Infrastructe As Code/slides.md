@@ -164,7 +164,7 @@ layout: two-cols-header
 
 ::left::
 
-<div class="flex flex-col gap-2 h-[50vh]" v-click>
+<div class="flex flex-col gap-2 h-[50vh] mt-8" v-click>
 
 # Your Application
 
@@ -176,7 +176,7 @@ layout: two-cols-header
 
 ::right::
 
-<div class="flex flex-col gap-4 mt-2" v-click>
+<div class="flex flex-col gap-4 mt-8" v-click>
 
 # Everything Else
 </div>
@@ -288,28 +288,28 @@ class: text-center
 # Infrastructure as Code Benefits
 
 <div class="grid grid-cols-2 gap-4 mt-8">
-<div v-click class="p-4 border rounded">
+<div v-click class="p-4 rounded">
   <carbon:security class="text-3xl text-blue-500 mb-2"/>
   <h3>Consistency</h3>
-  <p class="text-sm">Eliminate configuration drift</p>
+  <p class="text-sm text-gray-500">Eliminate configuration drift</p>
 </div>
 
-<div v-click class="p-4 border rounded">
+<div v-click class="p-4 rounded">
   <carbon:time class="text-3xl text-green-500 mb-2"/>
   <h3>Speed</h3>
-  <p class="text-sm">Rapid infrastructure deployment</p>
+  <p class="text-sm text-gray-500">Rapid infrastructure deployment</p>
 </div>
 
-<div v-click class="p-4 border rounded">
+<div v-click class="p-4 rounded">
   <carbon:document class="text-3xl text-purple-500 mb-2"/>
   <h3>Scale</h3>
-  <p class="text-sm">Manage complex infrastructure</p>
+  <p class="text-sm text-gray-500">Manage complex infrastructure</p>
 </div>
 
-<div v-click class="p-4 border rounded">
+<div v-click class="p-4 rounded">
   <carbon:collaborate class="text-3xl text-orange-500 mb-2"/>
   <h3>Collaboration</h3>
-  <p class="text-sm">Team-wide infrastructure visibility</p>
+  <p class="text-sm text-gray-500">Team-wide infrastructure visibility</p>
 </div>
 </div>
 
@@ -489,7 +489,7 @@ layout: two-cols-header
 <div class="mt-2 p-4">
 
 <div class="flex flex-col gap-4">
-  <div v-click class="p-4 border rounded border-gray-400">
+  <div v-click class="p-4 rounded border-gray-400">
     <h3 class="font-bold text-gray-400">Traditional Approach</h3>
     <ul class="mt-2 text-sm">
       <li>Buy physical servers</li>
@@ -499,7 +499,7 @@ layout: two-cols-header
     </ul>
   </div>
 
-  <div v-click class="p-4 border rounded border-gray-400">
+  <div v-click class="p-4 rounded border-gray-400">
     <h3 class="font-bold text-gray-400">Growing Demands</h3>
     <ul class="mt-2 text-sm">
       <li>Internet boom</li>
@@ -516,7 +516,7 @@ layout: two-cols-header
 <div class="mt-2 p-4">
 
 <div class="flex flex-col gap-4">
-  <div class="p-4 border rounded border-gray-400" v-click>
+  <div class="p-4 rounded border-gray-400" v-click>
     <h3 class="font-bold flex items-center gap-2 text-gray-400">
       <carbon-cloud class="text-blue-500"/> Enter AWS EC2 (2006)
     </h3>
@@ -775,7 +775,7 @@ layout: two-cols-header
 <div class="mt-2 p-4">
 
 <div class="flex flex-col gap-4">
-  <div v-click class="p-4 border rounded border-gray-400">
+  <div v-click class="p-4 rounded">
     <h3 class="font-bold text-gray-400">First Generation</h3>
     <ul class="mt-2 text-sm">
       <li>Configure individual machines</li>
@@ -785,7 +785,7 @@ layout: two-cols-header
     </ul>
   </div>
 
-  <div v-click class="p-4 border rounded border-blue-400">
+  <div v-click class="p-4 rounded">
     <h3 class="font-bold text-blue-400">Second Generation</h3>
     <ul class="mt-2 text-sm">
       <li>Declare cloud resources</li>
@@ -803,19 +803,27 @@ layout: two-cols-header
 <div class="mt-2 p-4">
 
 <div class="flex flex-col gap-4">
-  <div class="p-4 border rounded border-gray-400" v-click>
+  <div class="p-4 rounded" v-click>
     <h3 class="font-bold flex items-center gap-2 text-gray-400">
       <carbon-cloud-app class="text-blue-500"/> Key Changes
     </h3>
     <ul class="mt-2 text-sm">
-      <li>SNS instead of ZeroMQ</li>
-      <li>RDS instead of PostgreSQL setup</li>
-      <li>S3 instead of file systems</li>
-      <li>Lambda instead of process management</li>
+      <li class="flex items-center gap-2">
+        ZeroMQ <span class="text-gray-400">→</span> SNS
+      </li>
+      <li class="flex items-center gap-2">
+        PostgreSQL <span class="text-gray-400">→</span> RDS
+      </li>
+      <li class="flex items-center gap-2">
+        File Systems <span class="text-gray-400">→</span> S3
+      </li>
+      <li class="flex items-center gap-2">
+        Process Management <span class="text-gray-400">→</span> Lambda
+      </li>
     </ul>
   </div>
 
-  <div class="p-4 border rounded border-gray-400" v-click>
+  <div class="p-4 rounded" v-click>
     <h3 class="font-bold flex items-center gap-2 text-gray-400">
       <carbon-development class="text-green-500"/> Resource-Oriented
     </h3>
@@ -1030,8 +1038,8 @@ layout: two-cols-header
 <div class="mt-2 p-4">
 
 <div class="flex flex-col gap-4">
-  <div v-click class="p-4 border rounded border-yellow-400">
-    <h3 class="font-bold flex items-center gap-2 text-yellow-400">
+  <div v-click class="p-4 rounded">
+    <h3 class="font-bold flex items-center gap-2 text-gray-400">
       <carbon-code class="text-yellow-500"/> Custom DSL Limitations
     </h3>
     <ul class="mt-2 text-sm">
@@ -1042,9 +1050,9 @@ layout: two-cols-header
     </ul>
   </div>
 
-  <div v-click class="p-4 border rounded border-orange-400">
-    <h3 class="font-bold flex items-center gap-2 text-orange-400">
-      <carbon-document class="text-orange-500"/> Verbose Configuration
+  <div v-click class="p-4 rounded">
+    <h3 class="font-bold flex items-center gap-2 text-gray-400">
+      <carbon-document class="text-yellow-500"/> Verbose Configuration
     </h3>
     <ul class="mt-2 text-sm">
       <li>Full resource configuration required</li>
@@ -1063,7 +1071,7 @@ layout: two-cols-header
 
 <div class="flex flex-col gap-4">
 
-  <div class="p-4 border rounded border-gray-400" v-click>
+  <div class="p-4 rounded" v-click>
     <h3 class="font-bold flex items-center gap-2 text-gray-400">
       <carbon-development class="text-green-500"/> What Was Needed
     </h3>
@@ -1098,7 +1106,7 @@ layout: two-cols-header
 <div class="mt-2 p-4 h-[80vh]">
 
 <div class="flex flex-col gap-4">
-  <div v-click class="p-4 border rounded border-blue-400">
+  <div v-click class="p-4 rounded">
     <h3 class="font-bold text-blue-400">Key Characteristics</h3>
     <ul class="mt-2 text-sm">
       <li>General-purpose programming languages</li>
@@ -1114,7 +1122,7 @@ layout: two-cols-header
 ::right::
 
 <div class="mt-2 p-4">
-  <div v-click class="p-4 border rounded border-green-400">
+  <div v-click class="p-4 rounded">
     <h3 class="font-bold text-green-400">Benefits</h3>
     <ul class="mt-2 text-sm">
       <li>Shareable components</li>
@@ -1415,7 +1423,7 @@ layout: two-cols-header
 <div class="mt-2 p-4 h-[80vh]">
 
 <div class="flex flex-col gap-4">
-  <div v-click class="p-4 border rounded border-orange-400">
+  <div v-click class="p-4 rounded">
     <h3 class="font-bold flex items-center gap-2 text-orange-400">
       <carbon-warning class="text-orange-500"/> Current Limitations
     </h3>
@@ -1435,7 +1443,7 @@ layout: two-cols-header
 <div class="mt-2 p-4">
 
 <div class="flex flex-col gap-4">
-  <div v-click class="p-4 border rounded border-blue-400">
+  <div v-click class="p-4 rounded">
     <h3 class="font-bold flex items-center gap-2 text-blue-400">
       <carbon-idea class="text-blue-500"/> What We Need
     </h3>
@@ -1869,16 +1877,16 @@ layout: two-cols-header
 <div class="mt-2 p-4">
 
 <div class="flex flex-col gap-4">
-  <div v-click class="p-4 border rounded border-green-400">
+  <div v-click class="p-4 rounded">
     <h3 class="font-bold flex items-center gap-2 text-green-400">
       <carbon-group class="text-green-500"/> Small Teams
     </h3>
     <div class="mt-2">
-      <div class="flex items-center gap-2 mb-2" v-click>
+      <div class="flex items-center gap-2 mb-2">
         <material-symbols-light:shield-question-rounded/>
         <span class="font-semibold">Is infrastructure a core differentiator?</span>
       </div>
-      <div class="ml-6" v-click>
+      <div class="ml-6">
         <div class="text-sm mb-2">If no, consider managed platforms, such as:</div>
         <ul class="text-sm list-disc ml-4">
           <li>Digital Ocean App Platform</li>
@@ -1888,7 +1896,7 @@ layout: two-cols-header
       </div>
     </div>
   </div>
-  <div v-click class="p-4 border rounded border-blue-400">
+  <div v-click class="p-4 rounded">
     <h3 class="font-bold flex items-center gap-2 text-blue-400">
       <carbon-currency class="text-blue-500"/> Growing Teams
     </h3>
@@ -1909,12 +1917,12 @@ layout: two-cols-header
 <div class="mt-2 p-4">
 
 <div class="flex flex-col gap-4">
-  <div v-click class="p-4 border rounded border-purple-400">
+  <div v-click class="p-4 rounded">
     <h3 class="font-bold flex items-center gap-2 text-purple-400">
       <carbon-enterprise class="text-purple-500"/> Enterprise
     </h3>
     <div class="mt-2">
-      <div class="text-sm mb-2">Key considerations:</div>
+      <div class="text-sm mb-2">Additional considerations:</div>
       <ul class="text-sm list-disc ml-4">
         <li>Developer tooling & standards</li>
         <li>Licensing & compliance</li>
@@ -1935,15 +1943,7 @@ layout: two-cols-header
 layout: center
 ---
 
-# Questions? 😀
-
----
-layout: center
----
-
 # Resources
-
-<v-clicks>
 
 - **Historical Evolution** {.text-orange-500}
   - <carbon-document class="text-orange-500 inline mb-1"/> ["A Brief DevOps History: The Roots of Infrastructure as Code"](https://thenewstack.io/a-brief-devops-history-the-roots-of-infrastructure-as-code/)
@@ -1961,4 +1961,73 @@ layout: center
   - <carbon-cloud class="text-green-500 inline mb-1"/> ["10 Years of Cloud Infrastructure as Code"](https://medium.com/nordhero/10-years-of-cloud-infrastructure-as-code-history-and-trends-d307f8c4ce31)
   - <carbon-analytics class="text-green-400 inline mb-1"/> Focus on serverless and modern cloud patterns
 
-</v-clicks>
+---
+layout: two-cols-header
+---
+
+# Recap
+
+::left::
+
+<div class="mt-2 p-4">
+<div class="flex flex-col gap-4">
+  <div v-click class="p-4 rounded">
+    <h3 class="font-bold flex items-center gap-2 text-green-400">
+      <carbon-code class="text-green-500"/> What is IaC?
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>Managing infrastructure through code & version control</li>
+      <li>Declarative or imperative definitions</li>
+      <li>Automated, repeatable deployments</li>
+    </ul>
+  </div>
+
+  <div v-click class="p-4 rounded">
+    <h3 class="font-bold flex items-center gap-2 text-orange-400">
+      <carbon-settings class="text-orange-500"/> Infrastructure Evolution
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>Host Provisioning (2005-2010)</li>
+      <li>Declarative Cloud (2011-2017)</li>
+      <li>Imperative Cloud (2018+)</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+::right::
+
+<div class="mt-2 p-4">
+<div class="flex flex-col gap-4">
+  <div v-click class="p-4 rounded">
+    <h3 class="font-bold flex items-center gap-2 text-purple-400">
+      <carbon-development class="text-purple-500"/> Trade-offs & Considerations
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>Developer Experience vs Complexity</li>
+      <li>Multi-cloud vs Single-provider</li>
+      <li>DSL vs Programming Languages</li>
+    </ul>
+  </div>
+
+  <div v-click class="p-4 rounded">
+    <h3 class="font-bold flex items-center gap-2 text-yellow-400">
+      <carbon-idea class="text-yellow-500"/> Future Trends
+    </h3>
+    <ul class="mt-2 text-sm">
+      <li>Business-level abstractions</li>
+      <li>Intent-based infrastructure</li>
+      <li>Unified deployment workflows</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+
+
+
+---
+layout: center
+---
+
+# Questions? 😀
