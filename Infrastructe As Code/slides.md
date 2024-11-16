@@ -149,73 +149,110 @@ layout: section
 # What is Infrastructure as Code?
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
+
+<div class="flex flex-col items-center">
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    <span class="text-blue-500">Infrastructure</span> as Code
+  </h2>
+</div>
+
+::left::
+
+<div class="flex flex-col gap-2 h-[50vh]" v-click>
 
 # Your Application
 
-<div class="flex flex-col gap-2">
   <div class="flex items-center gap-2">
     <carbon:application class="text-blue-500 text-2xl"/>
     <span>Your core business logic</span>
-  </div>
-  <div class="text-sm text-gray-400 mt-2">
-    The code your team writes daily
   </div>
 </div>
 
 ::right::
 
+<div class="flex flex-col gap-4 mt-2" v-click>
+
 # Everything Else
+</div>
 
 <div class="flex flex-col gap-4 mt-2">
-  <div class="flex items-center gap-2">
+  <div class="flex items-center gap-2" v-click>
     <carbon:cloud class="text-green-500"/>
     <span>Compute Resources</span>
   </div>
-  <div class="flex items-center gap-2">
+  <div class="flex items-center gap-2" v-click>
     <carbon:datastore class="text-green-500"/>
     <span>Storage Solutions</span>
   </div>
-  <div class="flex items-center gap-2">
+  <div class="flex items-center gap-2" v-click>
     <carbon:network-2 class="text-green-500"/>
     <span>Networking</span>
   </div>
-  <div class="flex items-center gap-2">
+  <div class="flex items-center gap-2" v-click>
     <carbon:notification class="text-green-500"/>
     <span>Monitoring & Alerting</span>
   </div>
 </div>
 
 ---
-layout: quote
+layout: two-cols-header
 ---
 
-# "Infrastructure as Code is treating your infrastructure with the same respect as your application code."
+<div class="flex flex-col items-center">
+  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
+    Infrastructure <span class="text-blue-500">as Code</span>
+  </h2>
+</div>
 
----
-layout: default
----
+::left::
 
-# The "as Code" Part
+<div class="flex flex-col gap-6 mt-8 h-[80vh]">
+  <div class="flex items-center gap-4" v-click>
+    <carbon-workflow-automation class="text-blue-500 text-2xl"/>
+    <div>
+      <div class="font-semibold">Automated</div>
+      <div class="text-gray-400 text-sm">No manual clicking in consoles</div>
+    </div>
+  </div>
 
-<v-clicks>
+  <div class="flex items-center gap-4" v-click>
+    <carbon:version class="text-blue-500 text-2xl"/>
+    <div>
+      <div class="font-semibold">Version Controlled</div>
+      <div class="text-gray-400 text-sm">Track changes, rollback when needed</div>
+    </div>
+  </div>
 
-- **Version Controlled**: Track changes, rollback when needed
-- **Reproducible**: Same code = Same infrastructure
-- **Testable**: Validate before applying
-- **Collaborative**: Review infrastructure changes like code
-- **Automated**: No manual clicking in consoles
+  <div class="flex items-center gap-4" v-click>
+    <carbon:repeat class="text-blue-500 text-2xl"/>
+    <div>
+      <div class="font-semibold">Reproducible</div>
+      <div class="text-gray-400 text-sm">Same code = Same infrastructure</div>
+    </div>
+  </div>
 
-</v-clicks>
+  <div class="flex items-center gap-4" v-click>
+    <carbon-test-tool class="text-blue-500 text-2xl"/>
+    <div>
+      <div class="font-semibold">Testable</div>
+      <div class="text-gray-400 text-sm">Validate before applying</div>
+    </div>
+  </div>
 
-## TODO review the 2 following slides for describing IaC
+  <div class="flex items-center gap-4" v-click>
+    <carbon:collaborate class="text-blue-500 text-2xl"/>
+    <div>
+      <div class="font-semibold">Collaborative</div>
+      <div class="text-gray-400 text-sm">Review infrastructure changes like code</div>
+    </div>
+  </div>
+</div>
 
----
-layout: two-cols
----
+::right::
 
-# IaC in Practice
+<div class="mt-8" v-click>
 
 ```hcl
 # AWS Infrastructure Example
@@ -234,17 +271,9 @@ resource "aws_s3_bucket" "logs" {
 }
 ```
 
-::right::
+<div class="text-sm text-gray-400 text-center mt-2">Example Terraform Script</div>
 
-<div class="flex flex-col gap-4">
-<v-clicks>
 
-- Define infrastructure in code files
-- Version controlled with Git
-- Reproducible across environments
-- Automated deployment pipelines
-
-</v-clicks>
 </div>
 
 ---
