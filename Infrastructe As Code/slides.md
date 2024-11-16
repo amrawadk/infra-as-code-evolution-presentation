@@ -30,9 +30,110 @@ mdc: true
 </div>
 
 ---
+layout: two-cols
+cols: 1-2
+---
 
-## TODO add an intro slide
+<div class="flex flex-col items-center w-full">
+  <img
+    class="w-48 h-48 rounded-full mb-4"
+    src="https://prod-files-secure.s3.us-west-2.amazonaws.com/9abbeb10-a6cd-4555-b807-0a131d43477d/88153554-d72e-4b28-a1b8-2464516d8baf/public.avif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45GO43JXI4%2F20241115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241115T120051Z&X-Amz-Expires=86400&X-Amz-Signature=2da2482259084b3f6cc602b9d7f3ff463de02c53de5aa51c62c84786c9cfbf75&X-Amz-SignedHeaders=host&x-id=GetObject"
+    alt="Amr Awad"
+  />
+  
+  <h1 class="text-2xl font-bold mb-8">Amr Awad</h1>
+
+  <div class="mt-8 flex flex-col gap-4">
+    <a href="https://www.linkedin.com/in/amrawadk" target="_blank" class="text-gray-500 hover:text-blue-500">
+      <carbon-logo-linkedin class="text-2xl"/>
+      Linkedin
+    </a>
+    <a href="mailto:hello@amrawad.com" class="text-gray-500 hover:text-gray-700">
+      <carbon-email class="text-2xl"/>
+      hello@amrawad.com
+    </a>
+    <a href="https://adplist.org/mentors/amr-awad" target="_blank" class="text-gray-500 hover:text-purple-500">
+      <material-symbols-light:school-rounded class="text-2xl"/>
+      Adplist
+    </a>
+  </div>
+</div>
+
+::right::
+
+
+
+<div class="flex flex-col gap-2">
+
+  <h3 class="text-sm tracking-wide text-blue-400 font-semibold">Currently</h3>
+
+  <div class="flex flex-col gap-1 mb-2">
+    <div class="flex items-center gap-1">
+      <carbon-development class="text-blue-500 inline"/> 
+      <span>Staff Software Engineer @ Cur8 Capital</span>
+    </div>
+    <div class="text-sm text-gray-400">
+      Building a sharia compliant investment platform
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-1 mb-2" v-click>
+    <div class="flex items-center gap-1">
+      <carbon-application class="text-orange-500 inline"/>
+      <span>Founder @ Lunchflow</span>
+    </div>
+    <div class="text-sm text-gray-400">
+      Built a SaaS app connecting UK & EU banks to Lunch Money using Open Banking.
+    </div>
+  </div>
+
+  <h3 class="text-sm text-blue-400 tracking-wide font-semibold" v-click>Previously</h3>
+
+  <div class="flex flex-col gap-1 mb-2" v-click>
+    <div class="flex items-center gap-2">
+      <carbon-rocket class="text-green-500 inline"/>
+      <span>Founding Engineer @ Tempo (YC W15)</span>
+    </div>
+    <div class="flex flex-col gap-2 text-sm text-gray-400">
+      <div class="flex items-center gap-2">
+        <span>First full-time employee. Helped scale the company to 250+ people and raise $300M+ in funding.</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="flex flex-col gap-1 mb-2" v-click>
+  <div class="flex items-center gap-2">
+    <material-symbols-light:school-rounded class="text-purple-500 inline"/>
+    <span>Top Rated Freelancer @ Upwork</span>
+  </div>
+  <div class="text-sm text-gray-400">
+    <div class="flex flex-col gap-1">
+      <span>Working across multiple domains, including: machine learning, computer vision, cloud architecture and DevOps.</span>
+    </div>
+  </div>
+  </div>
+
+  <div class="flex flex-col gap-1" v-click>
+    <div class="flex items-center gap-1">
+      <carbon-car class="text-blue-500 inline"/>
+      <span>Embedded Software Engineer @ Valeo</span>
+    </div>
+    <div class="text-sm text-gray-400">
+      <div class="flex flex-col gap-1">
+        <span>Developed software for autonomous driving systems and advanced driver assistance features.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+---
+
 ## TODO add slide numbers
+## TODO add outline slide
 
 ---
 layout: section
