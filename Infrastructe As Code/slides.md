@@ -45,15 +45,19 @@ cols: 1-2
 
   <div class="mt-8 flex flex-col gap-4">
     <a href="https://www.linkedin.com/in/amrawadk" target="_blank" class="text-gray-500 hover:text-blue-500">
-      <carbon-logo-linkedin class="text-2xl"/>
+      <carbon-logo-linkedin class="text-xl"/>
       Linkedin
     </a>
+    <a href="https://amrawad.com" class="text-gray-500 hover:text-gray-700">
+      <carbon-link class="text-xl"/>
+      amrawad.com
+    </a>
     <a href="mailto:hello@amrawad.com" class="text-gray-500 hover:text-gray-700">
-      <carbon-email class="text-2xl"/>
+      <carbon-email class="text-xl"/>
       hello@amrawad.com
     </a>
     <a href="https://adplist.org/mentors/amr-awad" target="_blank" class="text-gray-500 hover:text-purple-500">
-      <material-symbols-light:school-rounded class="text-2xl"/>
+      <material-symbols-light:school-rounded class="text-xl"/>
       Adplist
     </a>
   </div>
