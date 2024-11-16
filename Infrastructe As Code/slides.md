@@ -127,13 +127,6 @@ cols: 1-2
   </div>
 </div>
 
-
-
-
----
-
-## TODO add slide numbers
-
 ---
 layout: center
 ---
