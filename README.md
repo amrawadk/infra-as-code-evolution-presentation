@@ -1,11 +1,9 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# From Scripts to Strategy: The Past, Present, and Future of Infrastructure as Code
 
-To start the slide show:
+![Presentation Cover](public/cover.png)
 
-- `npm install`
-- `npm run dev`
-- visit <http://localhost:3030>
+This repo contains the slides originally presented in JobStack 24, one of the biggest tech conferences in MENA, with over 7500 attendees from 11+ countries.
 
-Edit the [slides.md](./slides.md) to see the changes.
+More details on the talk can be found in [this blog post](https://amrawad.com/talks/from-scripts-to-strategy-the-past-present-and-future-of-infrastructure-as-code).
 
-Learn more about Slidev at the [documentation](https://sli.dev/).
+The slides were built with [Slidev](https://sli.dev).
