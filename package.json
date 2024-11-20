@@ -5,7 +5,8 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
-    "export": "slidev export --dark --output 'slides.pdf'"
+    "export": "slidev export --dark --output 'slides.pdf'",
+    "export:cover": "slidev export --dark --range 1 --format png --output './public/cover' && mv public/cover/1.png public/cover.png && rm -r public/cover"
   },
   "dependencies": {
     "@iconify-json/bx": "^1.2.1",
