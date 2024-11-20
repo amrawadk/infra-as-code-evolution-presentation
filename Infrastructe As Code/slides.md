@@ -20,7 +20,7 @@ mdc: true
 <div class="pt-12 flex items-center justify-center gap-4">
   <img
     class="w-24 h-24 rounded-full"
-    src="https://prod-files-secure.s3.us-west-2.amazonaws.com/9abbeb10-a6cd-4555-b807-0a131d43477d/88153554-d72e-4b28-a1b8-2464516d8baf/public.avif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45GO43JXI4%2F20241115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241115T120051Z&X-Amz-Expires=86400&X-Amz-Signature=2da2482259084b3f6cc602b9d7f3ff463de02c53de5aa51c62c84786c9cfbf75&X-Amz-SignedHeaders=host&x-id=GetObject"
+    src="/avatar.avif"
     alt="Amr Awad"
   />
   <div class="flex flex-col items-start">
@@ -37,7 +37,7 @@ cols: 1-2
 <div class="flex flex-col items-center w-full">
   <img
     class="w-48 h-48 rounded-full mb-4"
-    src="https://prod-files-secure.s3.us-west-2.amazonaws.com/9abbeb10-a6cd-4555-b807-0a131d43477d/88153554-d72e-4b28-a1b8-2464516d8baf/public.avif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45GO43JXI4%2F20241115%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20241115T120051Z&X-Amz-Expires=86400&X-Amz-Signature=2da2482259084b3f6cc602b9d7f3ff463de02c53de5aa51c62c84786c9cfbf75&X-Amz-SignedHeaders=host&x-id=GetObject"
+    src="/avatar.avif"
     alt="Amr Awad"
   />
   
@@ -1087,50 +1087,6 @@ layout: two-cols-header
     These limitations led to the rise of the next generation of infrastructure as code tooling ...
   </div>
 </div>
-
-</div>
-
----
-layout: two-cols-header
----
-
-<div class="flex flex-col items-start">
-  <span class="text-gray-400 text-sm tracking-wide">2018-Present</span>
-  <h2 class="text-3xl font-bold flex items-center gap-2 my-2">
-    <carbon-code class="text-blue-500"/> Infrastructure as Software
-  </h2>
-</div>
-
-::left::
-
-<div class="mt-2 p-4 h-[80vh]">
-
-<div class="flex flex-col gap-4">
-  <div v-click class="p-4 rounded">
-    <h3 class="font-bold text-blue-400">Key Characteristics</h3>
-    <ul class="mt-2 text-sm">
-      <li>General-purpose programming languages</li>
-      <li>Object-oriented abstractions</li>
-      <li>Package management</li>
-      <li>Modern IDE support</li>
-    </ul>
-  </div>
-</div>
-
-</div>
-
-::right::
-
-<div class="mt-2 p-4">
-  <div v-click class="p-4 rounded">
-    <h3 class="font-bold text-green-400">Benefits</h3>
-    <ul class="mt-2 text-sm">
-      <li>Shareable components</li>
-      <li>Type safety</li>
-      <li>Unit testing</li>
-      <li>Code reuse</li>
-    </ul>
-  </div>
 
 </div>
 
